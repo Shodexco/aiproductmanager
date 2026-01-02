@@ -1,0 +1,46 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - LOG_LEVEL=INFO
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./backend:/app/backend
+      - ./core:/app/core
+    depends_on:
+      - redis
+    command: uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  react-frontend:
+    build:
+      context: ./frontend-react
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_BACKEND_URL=http://backend:8000
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_PORT=0
+    volumes:
+      - ./frontend-react:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    command: npm start
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:

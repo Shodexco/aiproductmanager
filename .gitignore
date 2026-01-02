@@ -1,0 +1,149 @@
+# ============================================
+# Environment Variables
+# ============================================
+# Exclude all .env files except the example template
+.env
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ============================================
+# Python
+# ============================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyc
+*.pyo
+*.pyd
+.python-version
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ============================================
+# Node.js / React
+# ============================================
+frontend-react/node_modules/
+frontend-react/.npm
+frontend-react/.env.local
+frontend-react/.env.development.local
+frontend-react/.env.test.local
+frontend-react/.env.production.local
+frontend-react/npm-debug.log*
+frontend-react/yarn-debug.log*
+frontend-react/yarn-error.log*
+frontend-react/.eslintcache
+frontend-react/.stylelintcache
+
+# ============================================
+# Docker
+# ============================================
+docker-compose.override.yml
+docker-compose.*.yml
+
+# ============================================
+# Database & Data Files
+# ============================================
+*.db
+*.sqlite
+*.sqlite3
+data/
+
+# ============================================
+# Generated Files & Build Artifacts
+# ============================================
+*.pdf
+*.zip
+temp/
+tmp/
+*.tmp
+*.temp
+
+# ============================================
+# Testing & Coverage
+# ============================================
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# ============================================
+# Logs
+# ============================================
+*.log
+logs/
+
+# ============================================
+# IDE & Editor
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# ============================================
+# Operating System Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
